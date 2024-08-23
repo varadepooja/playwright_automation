@@ -24,7 +24,7 @@ jobs:
       run: npx playwright install --with-deps
 
     - name: Run Playwright tests
-      run: npx playwright test -g "oginpage_end to end scenario" --worker=4 --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+      run: npx playwright test -g "oginpage_end to end scenario" --workers=4 --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
 
     - name: Upload blob report to GitHub Actions Artifacts
       if: ${{ !cancelled() }}
